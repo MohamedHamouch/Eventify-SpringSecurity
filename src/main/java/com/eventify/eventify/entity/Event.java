@@ -42,5 +42,10 @@ public class Event {
     @NotNull
     private Integer capacity;
 
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "organizer_id", nullable = false)
+    private User organizer;
+
 
 }
