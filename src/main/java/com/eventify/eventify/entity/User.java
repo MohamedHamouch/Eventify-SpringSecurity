@@ -2,6 +2,7 @@ package com.eventify.eventify.entity;
 
 import com.eventify.eventify.entity.enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,8 @@ public class User {
     @NotBlank(message = "Name's field can't be empty")
     @Column(nullable = false)
     private String name;
+
+    @Column(unique = true)
     private String email;
     private String password;
     private Role role;
