@@ -29,7 +29,7 @@ public class UserService {
         }
 
         User user = userMapper.toEntity(request);
-        user.setRole(Role.ROLE_USER); // Default role
+        user.setRole(Role.ROLE_USER);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         User saved = userRepository.save(user);
